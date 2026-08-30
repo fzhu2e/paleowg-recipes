@@ -1,0 +1,224 @@
+/* ==========================================================================
+   PaleoWG homepage design system  (Jupyter Book 2 / MyST book-theme)
+
+   Loaded via `site.options.style` in myst.yml. Scoped to .paleowg-* classes so
+   it only affects the homepage blocks and never fights the theme's own
+   layout.
+   has no hero image / gallery assets (yet).
+
+   book-theme toggles dark mode with a `dark` class on <html>, so every token
+   below has a `.dark` counterpart.
+   ========================================================================== */
+
+:root {
+  --paleowg-accent:      #10559e;
+  --paleowg-accent-soft: rgba(16, 85, 158, 0.10);
+  --paleowg-surface:     #ffffff;
+  --paleowg-border:      #dde5ef;
+  --paleowg-text:        #1a1f27;
+  --paleowg-muted:       #64707f;
+  --paleowg-shadow:      0 1px 2px rgba(10, 18, 30, .06), 0 8px 24px rgba(10, 18, 30, .06);
+  --paleowg-shadow-lift: 0 2px 4px rgba(10, 18, 30, .08), 0 16px 40px rgba(10, 18, 30, .14);
+}
+
+html.dark {
+  --paleowg-accent:      #7dc3ff;
+  --paleowg-accent-soft: rgba(125, 195, 255, 0.14);
+  --paleowg-surface:     #101b2b;
+  --paleowg-border:      #22334a;
+  --paleowg-text:        #e8eef6;
+  --paleowg-muted:       #8ea3bc;
+  --paleowg-shadow:      0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+  --paleowg-shadow-lift: 0 2px 4px rgba(0,0,0,.5), 0 18px 44px rgba(0,0,0,.5);
+}
+
+.myst-home-link > span {
+  font-weight: 600;
+  letter-spacing: -.01em;
+}
+
+/* --------------------------------------------------------------------------
+   Site footer (site.parts.footer -> footer.md)
+   -------------------------------------------------------------------------- */
+.myst-site-footer,
+footer .myst-content {
+  font-size: .85rem;
+  line-height: 1.55;
+  color: var(--paleowg-muted);
+}
+
+/* --------------------------------------------------------------------------
+   MyST integration: neutralize the theme's link defaults on card anchors.
+   -------------------------------------------------------------------------- */
+.paleowg-card.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================================================
+   Nav cards
+   ========================================================================== */
+.paleowg-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.1rem;
+  margin: 1.5rem 0 0;
+}
+
+.paleowg-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  padding: 1.4rem;
+  background: var(--paleowg-surface);
+  border: 1px solid var(--paleowg-border);
+  border-radius: 12px;
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+.paleowg-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--paleowg-shadow-lift);
+  border-color: var(--paleowg-accent);
+  text-decoration: none;
+}
+.paleowg-card-icon {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--paleowg-accent-soft);
+  color: var(--paleowg-accent);
+  margin-bottom: .85rem;
+  font-size: 1.05rem;
+}
+.paleowg-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 .3rem;
+  color: var(--paleowg-text);
+  border: none;
+}
+.paleowg-card p {
+  margin: 0;
+  color: var(--paleowg-muted);
+  font-size: .9rem;
+  line-height: 1.55;
+}
+
+
+/* --------------------------------------------------------------------------
+   Sidebar header: the logo replaces the site-title link.
+
+   The first item in the sidebar table of contents is the root-page link, which
+   the theme labels with the project title. Its text is pushed out of view and
+   the logo drawn behind it at 80% of the sidebar width.
+   -------------------------------------------------------------------------- */
+.myst-primary-sidebar-toc .myst-toc > a:first-child {
+  display: block;
+  height: 0;
+  padding: 0 0 100% 0;
+  margin: .25rem 0 1.25rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: -9999px;          /* hides the label, keeps it for screen readers */
+  background-image: url(./assets/logo.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% auto;
+  border-radius: 0;
+}
+.myst-primary-sidebar-toc .myst-toc > a:first-child:hover {
+  background-color: transparent;
+}
+
+.myst-primary-sidebar-toc .myst-toc > div > .myst-toc-item > a {
+  font-weight: 700;
+}
+
+/* -------------------------------------------------------------------------- */
+.paleowg-card-miocene {
+  color: #fff;
+  background:
+    /* linear-gradient(rgba(8, 32, 53, .72), rgba(8, 32, 53, .82)), */
+    linear-gradient(rgba(8, 32, 53, .28), rgba(8, 32, 53, .38)),
+    url("./assets/miocene.png") center / cover no-repeat;
+  border-color: transparent;
+}
+
+.paleowg-card-miocene :is(h1, h2, h3, h4, h5, h6, p, code) {
+  color: #fff !important;
+}
+
+.paleowg-card-miocene .paleowg-card-icon {
+  background: rgba(255, 255, 255, .18);
+  color: #fff;
+}
+
+.paleowg-card-eocene {
+  color: #fff;
+  background:
+    /* linear-gradient(rgba(8, 32, 53, .72), rgba(8, 32, 53, .82)), */
+    linear-gradient(rgba(8, 32, 53, .28), rgba(8, 32, 53, .38)),
+    url("./assets/eocene.png") center / cover no-repeat;
+  border-color: transparent;
+}
+
+.paleowg-card-eocene :is(h1, h2, h3, h4, h5, h6, p, code) {
+  color: #fff !important;
+}
+
+.paleowg-card-eocene .paleowg-card-icon {
+  background: rgba(255, 255, 255, .18);
+  color: #fff;
+}
+
+.paleowg-card-pliocene {
+  color: #fff;
+  background:
+    /* linear-gradient(rgba(8, 32, 53, .72), rgba(8, 32, 53, .82)), */
+    linear-gradient(rgba(8, 32, 53, .28), rgba(8, 32, 53, .38)),
+    url("./assets/pliocene.png") center / cover no-repeat;
+  border-color: transparent;
+}
+
+.paleowg-card-pliocene :is(h1, h2, h3, h4, h5, h6, p, code) {
+  color: #fff !important;
+}
+
+.paleowg-card-pliocene .paleowg-card-icon {
+  background: rgba(255, 255, 255, .18);
+  color: #fff;
+}
+
+.paleowg-card-cretaceous {
+  color: #fff;
+  background:
+    /* linear-gradient(rgba(8, 32, 53, .72), rgba(8, 32, 53, .82)), */
+    linear-gradient(rgba(8, 32, 53, .28), rgba(8, 32, 53, .38)),
+    url("./assets/cretaceous.png") center / cover no-repeat;
+  border-color: transparent;
+}
+
+.paleowg-card-cretaceous :is(h1, h2, h3, h4, h5, h6, p, code) {
+  color: #fff !important;
+}
+
+.paleowg-card-cretaceous .paleowg-card-icon {
+  background: rgba(255, 255, 255, .18);
+  color: #fff;
+}
+
+/* Sub-group headers in the sidebar TOC (title-only TOC entries) */
+.myst-primary-sidebar-toc .myst-toc-item:has(> div.grow) {
+  margin-top: 1rem;
+  padding-top: .5rem;
+  border-top: 1px solid var(--paleowg-border);
+}
+.myst-primary-sidebar-toc .myst-toc-item > div.grow {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--paleowg-muted);
+}

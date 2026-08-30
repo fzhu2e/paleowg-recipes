@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://localhost:3000/sitemap_style.xsl" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>http://localhost:3000</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/ug-cretaceous</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/cretaceous/notebooks/atm-bc-topo</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/ug-eocene</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/eocene/notebooks/atm-bc-topo</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/ug-miocene</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/miocene/miomip2/notebooks/atm-bc-topo</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/miocene/miomip2/notebooks/ocn-bc-kmt</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/ug-pliocene</loc>
+  </url>
+  <url>
+    <loc>http://localhost:3000/pliocene/notebooks/atm-bc-topo</loc>
+  </url>
+</urlset>
