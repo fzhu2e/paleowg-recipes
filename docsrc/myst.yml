@@ -1,0 +1,67 @@
+# Jupyter Book 2 / MyST. See https://mystmd.org/guide/frontmatter
+#
+# Build:    cd docsrc && jupyter-book build --html
+# Preview:  cd docsrc && jupyter-book start
+version: 1
+
+project:
+  id: 8f1c8f1e-1c1a-4c7d-9c9b-0f6b0f6e0c1a
+  # Drives the browser tab / <title> metadata for the site.
+  title: "PaleoWG Recipes"
+  description: >-
+    CESM paleoclimate setup recipies
+  github: https://github.com/fzhu2e/paleowg-recipes
+  keywords: [CESM, iCESM, paleoclimate]
+
+  toc:
+    - file: index.md
+
+    - title: Cretaceous
+      file: ug-cretaceous.md
+      children:
+        - title: Atmosphere
+          children:
+          - file: Cretaceous/notebooks/atm-bc-topo.ipynb
+
+    - title: Eocene
+      file: ug-eocene.md
+      children:
+        - title: Atmosphere
+          children:
+          - file: Eocene/notebooks/atm-bc-topo.ipynb
+
+    - title: Miocene
+      file: ug-miocene.md
+      children:
+        - title: Atmosphere
+          children:
+            - file: Miocene/MioMIP2/notebooks/atm-bc-topo.ipynb
+        - title: Ocean
+          children:
+            - file: Miocene/MioMIP2/notebooks/ocn-bc-kmt.ipynb
+
+    - title: Pliocene
+      file: ug-pliocene.md
+      children:
+        - title: Atmosphere
+          children:
+          - file: Pliocene/notebooks/atm-bc-topo.ipynb
+
+  static_files:
+    - assets
+
+site:
+  template: book-theme
+
+  parts:
+    primary_sidebar_footer: sidebar-footer.md
+
+  options:
+    # Derive page URLs from the folder structure rather than the bare filename,
+    # so notebooks that share a name across groups (atm-bc-topo.ipynb) get
+    # distinct, stable URLs instead of atm-bc-topo-1 / -2 / -3.
+    folders: true
+    logo_text: "PaleoWG Recipes"
+    style: ./style.css
+    outline_maxdepth: 3
+    favicon: ./favicon.ico
