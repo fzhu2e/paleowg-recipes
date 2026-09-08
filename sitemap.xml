@@ -14,7 +14,7 @@
     <loc>http://localhost:3000/ug-eocene</loc>
   </url>
   <url>
-    <loc>http://localhost:3000/eocene/notebooks/atm-bc-topo</loc>
+    <loc>http://localhost:3000/eocene/deepmip2/notebooks/atm-bc-topo</loc>
   </url>
   <url>
     <loc>http://localhost:3000/ug-miocene</loc>
