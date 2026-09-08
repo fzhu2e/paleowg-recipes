@@ -28,7 +28,7 @@ project:
       children:
         - title: Atmosphere
           children:
-          - file: Eocene/notebooks/atm-bc-topo.ipynb
+          - file: Eocene/DeepMIP2/notebooks/atm-bc-topo.ipynb
 
     - title: Miocene
       file: ug-miocene.md
